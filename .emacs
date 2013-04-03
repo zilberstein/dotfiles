@@ -1,6 +1,14 @@
 (setq column-number-mode t) ;;Show column numbers
+(kill-buffer "*scratch*") ;; no scratch buffer
 (display-time) ;; show the current time
 (setq make-backup-files nil) ;; disable ~ backup files
+(global-set-key (kbd "C-c i") 'indent-region) ;; indent highlighted text
+(global-linum-mode 1) ;; Add line numbers
+(setq linum-format "%d: ") ;; format line numbers with spaces
+(fset 'yes-or-no-p 'y-or-n-p) ;; Set yes/no prompts to y/n
+(global-set-key (kbd "C-c n") 'comment-region) ;; make the region comments
+(global-set-key (kbd "C-c m") 'uncomment-region) ;; uncomment highlighted area
+
 
 
 ;;My custom emacs color scheme
